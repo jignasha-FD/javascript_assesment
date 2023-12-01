@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Item Example</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        margin: 0 auto;
+        border: 2px solid black;
+        width: 30%;
+        text-align: center;
+        padding: 30px 10px 40px;
+        margin-top: 30px;
+      }
+      h2 {
+        padding-bottom: 40px;
+      }
+      #outputList {
+        list-style-type: none;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Add Item</h2>
+      <input type="text" name="enter" id="enter" />
+      <button onclick="addItem()">Add Item</button>
+
+      <ul id="outputList"></ul>
+
+      <script>
+        function addItem() {
+          let newItem = document.getElementById("enter").value;
+
+          if (newItem) {
+            let listItem = document.createElement("li");
+
+            listItem.textContent = newItem;
+
+            let outputList = document.getElementById("outputList");
+
+            outputList.appendChild(listItem);
+          }
+          //   console.log("input");
+        }
+      </script>
+    </div>
+  </body>
+</html>
